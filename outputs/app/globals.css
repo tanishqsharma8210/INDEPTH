@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 49% 8%;
+    --foreground: 0 0% 96%;
+    --surface: 224 34% 12%;
+    --surface-muted: 222 27% 16%;
+    --muted: 218 18% 70%;
+    --border: 220 22% 22%;
+  }
+
+  .light {
+    --background: 40 23% 97%;
+    --foreground: 225 49% 12%;
+    --surface: 0 0% 100%;
+    --surface-muted: 35 22% 93%;
+    --muted: 218 18% 36%;
+    --border: 220 16% 83%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .bg-surface {
+    background-color: hsl(var(--surface));
+  }
+
+  .bg-surface-muted {
+    background-color: hsl(var(--surface-muted));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .text-muted {
+    color: hsl(var(--muted));
+  }
+
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+}
